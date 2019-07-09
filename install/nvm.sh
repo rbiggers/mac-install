@@ -1,5 +1,6 @@
 #!/bin/bash
 
+NVM_VER="v0.34.0"
 # NODE_VER="v10.15.0"
 NVM_SHELL=~/.nvm/nvm.sh
 
@@ -18,7 +19,7 @@ fi
 
 if ! [ -n "$(nvm --version)" ]; then
   echo "Installing Node version manager (http://nvm.sh)." >&2
-  curl -o- https://github.com/nvm-sh/nvm/blob/master/install.sh | bash
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VER/install.sh | bash  
   
   if ! [ $? -eq 0 ]; then
   echo "=> NVM install failed" >&2
